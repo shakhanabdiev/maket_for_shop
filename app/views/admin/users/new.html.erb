@@ -1,0 +1,28 @@
+<h2><%=@page_title%></h2>
+
+<%= form_for [:admin, @user] do |f| %>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+  <!---shows any error--->
+      <div class="alert alert-danger"><%= msg %></div>
+    <%end%>
+  <%end%>
+  <div class="form-group"> 
+  	 <%= f.label :name  %><br>
+  	 <%= f.text_field :name, class:'form-control'%><brl>
+  </div>
+  <div class="form-group"> 
+  	 <%= f.label :email  %><br>
+  	 <%= f.text_field :email, class:'form-control'%><brl>
+  </div>
+  <div class="form-group"> 
+  	 <%= f.label :password  %><br>
+  	 <%= f.password_field :password, class:'form-control'%><brl>
+  </div>
+  <div class="form-group"> 
+  	 <%= f.label :password_confirmation  %><br>
+  	 <%= f.password_field :password_confirmation, class:'form-control'%><brl>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary"%>
+  <%= link_to "Cancel", admin_posts_path, class: "btn btn-default"%>
+<%end%>
