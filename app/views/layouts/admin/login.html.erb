@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>#maket</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+ 
+    <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <%= favicon_link_tag asset_path('favicon.ico') %>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

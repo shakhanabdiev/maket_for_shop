@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::ApplicationController
+  before_action :verify_logged_in
   def new
     @page_title = 'Add User'
     @user = User.new
@@ -41,9 +42,9 @@ class Admin::UsersController < Admin::ApplicationController
 
   def index
     if params[:search]
-        @users = User.search(params[:search]).all.order('created_at DESC')
+        @users = User.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 2, :page => params[:page])
      else
-        @users = User.all.order('created_at DESC')
+        @users = User.all.order('created_at DESC').paginate(:per_page => 6, :page => params[:page])
      end
   end
 

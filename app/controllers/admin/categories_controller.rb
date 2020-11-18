@@ -1,4 +1,5 @@
 class Admin::CategoriesController <Admin::ApplicationController
+  before_action :verify_logged_in
   def new
     @page_title = 'Add Category'
     @category = Category.new
@@ -41,9 +42,9 @@ class Admin::CategoriesController <Admin::ApplicationController
 
   def index
     if params[:search]
-        @categories = Category.search(params[:search]).all.order('created_at DESC')
+        @categories = Category.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 2, :page => params[:page])
      else
-        @categories = Category.all.order('created_at DESC')
+        @categories = Category.all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
      end
   end
 

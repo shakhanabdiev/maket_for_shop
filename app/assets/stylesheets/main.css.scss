@@ -54,7 +54,10 @@ body{
 	border-radius:0;
 	height:38px;
 }
-
+.avatar_user{
+	width:100px;
+	height:100px;
+}
 .search-form .btn{
 	border:0;
 	height:38px;
@@ -77,6 +80,10 @@ body{
 	border-radius:0;
 }
 
+.comments img{
+	width:100%
+}
+
 .btn-primary{
 	background:$primary-btn-color;
 }
@@ -92,7 +99,7 @@ body{
 }
 
 .post img{
-	width:100%;
+	width:100%
 }
 
 .post-content{
@@ -105,14 +112,17 @@ body{
 	padding:0;
 }
 
-.post small{
+small{
 	background:$primary-color;
 	color:#fff;
 	display:block;
 	margin:10px 0;
 	padding:5px 10px;
 }
-
+.post .btn{
+	display:block;
+	margin-top:20px;
+}
 footer{
 	background:$primary-color;
 	color:#fff;
